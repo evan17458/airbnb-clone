@@ -1,4 +1,3 @@
-
 import EmptyState from "@/app/components/EmptyState";
 import ClientOnly from "@/app/components/ClientOnly";
 
@@ -15,8 +14,8 @@ const ListingPage = async () => {
     return (
       <ClientOnly>
         <EmptyState
-          title="No favorites found"
-          subtitle="Looks like you have no favorite listings."
+          title="未找到我的的最愛"
+          subtitle="您似乎沒有我的最愛列表."
         />
       </ClientOnly>
     );
@@ -24,12 +23,9 @@ const ListingPage = async () => {
 
   return (
     <ClientOnly>
-      <FavoritesClient
-        listings={listings}
-        currentUser={currentUser}
-      />
+      <FavoritesClient listings={listings} currentUser={currentUser} />
     </ClientOnly>
   );
-}
- 
+};
+
 export default ListingPage;
