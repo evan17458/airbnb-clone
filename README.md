@@ -8,10 +8,32 @@ This is a repository for a Full Stack Airbnb Clone with Next.js 13 App Router: R
 
 Features:
 
--Tailwind 設計
--Tailwind 動畫和效果 -完全響應式 -憑證認證
--Google 認證
--Github 認證 -使用 Cloudinary CDN 上傳圖片 -使用 react-hook-form 驗證和處理表單 -使用 react-toastify 處理伺服器錯誤 -帶有 react-date-range 的日曆 -頁面加載狀態 -空頁面狀態 -預訂/訂位系統 -客人取消預訂 -業主取消預訂 -創建和刪除物業 -定價計算 -根據類別、日期範圍、地圖位置、人數、房間和衛浴數量的高級搜索演算法 -例如,如果在您要旅行的期望日期範圍內有預訂,我們將過濾掉這些物業 -最愛系統 -可共用的 URL 過濾 -例如,您可以選擇一個類別、位置和日期範圍,並可以與其他瀏覽器中的登出朋友共用 URL,他們將看到相同的結果 -如何在路由處理程序(app/api)中編寫 POST 和 DELETE 路由 -如何通過直接訪問數據庫(沒有 API!)來提取伺服器組件中的數據,就像魔法一樣! -如何處理像 error.tsx 和 loading.tsx 這樣的文件,這些是 Next 13 模板文件,用於統一加載和錯誤處理 -如何處理伺服器和子組件之間的關係!
+- Tailwind 設計
+- Tailwind 動畫和效果
+- 完全響應式
+- 憑據驗證
+- Google 驗證
+- GitHub 驗證
+- 使用 Cloudinary CDN 上傳圖片
+- 使用 react-hook-form 進行客戶端表單驗證和處理
+- 使用 react-toast 處理服務器錯誤
+- 使用 react-date-range 日曆
+- 頁面加載狀態
+- 頁面空狀態
+- 預訂/預約系統
+- 訪客預約取消
+- 業主預約取消
+- 創建和刪除房產
+- 定價計算
+- 按類別、日期範圍、地圖位置、客人數、房間和浴室數進行高級搜索算法
+- 例如，我們將過濾出在您所選日期範圍內已預訂的房產
+- 收藏夾系統
+- 可分享的 URL 篩選器
+- 假設您選擇了類別、地點和日期範圍，您將能夠與另一個瀏覽器中的未登錄朋友分享 URL，他們將看到相同的結果
+- 如何在路由處理程序（app/api）中編寫 POST 和 DELETE 路由
+- 如何在服務器端 react 組件中直接訪問數據庫（無需 API！類似魔術！）
+- 如何處理類似 error.tsx 和 loading.tsx 的文件，這些是 Next 13 模板文件，用於統一處理加載和錯誤
+- 如何處理服務器和子組件之間的關係
 
 ### Prerequisites
 
