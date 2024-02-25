@@ -1,11 +1,10 @@
-'use client';
+"use client";
 
 import { Toaster } from "react-hot-toast";
 
 const ToasterProvider = () => {
-  return ( 
-    <Toaster />
-   );
-}
- 
+  return <Toaster />;
+};
+
 export default ToasterProvider;
+//給app/layout引入

@@ -47,3 +47,6 @@ export async function POST(request: Request) {
   return NextResponse.json(listing);
 }
 //4:56:42
+//給rentModal打api用
+//房東填寫要出租房子的細項,類別/地方/房客/房間/浴間數量/照片/描述/價格/
+//有6個彈窗內容,給房東填寫

@@ -104,6 +104,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   label="我的旅行"
                   onClick={() => router.push("/trips")}
                 />
+                {/* 客人的預約行程 */}
                 <MenuItem
                   label="我的最愛"
                   onClick={() => router.push("/favorites")}
@@ -112,6 +113,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   label="我的預訂"
                   onClick={() => router.push("/reservations")}
                 />
+                {/* 房東的訂單 */}
                 <MenuItem
                   label="我的房產"
                   onClick={() => router.push("/properties")}

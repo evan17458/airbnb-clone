@@ -1,4 +1,3 @@
-
 import EmptyState from "@/app/components/EmptyState";
 import ClientOnly from "@/app/components/ClientOnly";
 
@@ -12,13 +11,10 @@ const ReservationsPage = async () => {
 
   if (!currentUser) {
     return (
-      <ClientOnly> 
-        <EmptyState
-          title="Unauthorized"
-          subtitle="Please login"
-        />
+      <ClientOnly>
+        <EmptyState title="未經授權" subtitle="請登入" />
       </ClientOnly>
-    )
+    );
   }
 
   const reservations = await getReservations({ authorId: currentUser.id });
@@ -26,22 +22,16 @@ const ReservationsPage = async () => {
   if (reservations.length === 0) {
     return (
       <ClientOnly>
-        <EmptyState
-          title="No reservations found"
-          subtitle="Looks like you have no reservations on your properties."
-        />
+        <EmptyState title="未找到預訂" subtitle="您似乎沒有預訂您的房間." />
       </ClientOnly>
     );
   }
 
   return (
     <ClientOnly>
-      <TripsClient
-        reservations={reservations}
-        currentUser={currentUser}
-      />
+      <TripsClient reservations={reservations} currentUser={currentUser} />
     </ClientOnly>
   );
-}
- 
+};
+
 export default ReservationsPage;

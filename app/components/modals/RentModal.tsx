@@ -17,7 +17,6 @@ import { categories } from "../navbar/Categories";
 import ImageUpload from "../inputs/ImageUpload";
 import Input from "../inputs/Input";
 import Heading from "../Heading";
-
 enum STEPS {
   CATEGORY = 0,
   LOCATION = 1,
@@ -69,7 +68,12 @@ const RentModal = () => {
       }),
     [location]
   );
-
+  // import("../Map") 使用動態import語法,會返回一個 Promise。
+  //這樣可以避免 Map 組件一載入頁面就被加載,延遲加載該組件。
+  // useMemo 的依賴項設置為 [location],代表只有 location 改變時,
+  //才重新執行 useMemo 進行加載 Map 組件。這樣可以避免每次重新渲染時都加載 Map。
+  // 將 dynamic 加載的 Map 組件包裝在 useMemo 中返回,這樣可以避免每次重新渲染時都執行 dynamic 加載語句。
+  // ssr: false 表示這個動態組件在服務器渲染時不進行加載。
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
       shouldDirty: true,
@@ -77,7 +81,14 @@ const RentModal = () => {
       shouldValidate: true,
     });
   };
-
+  //在設定表單域的值的同時,也會將 shouldDirty、shouldTouch和shouldValidate設為 true。
+  //shouldDirty 表示值已經被修改過,
+  //shouldTouch 表示域已經被訪問(touched)過,
+  // shouldValidate 表示在設定值的時候需要觸發驗證。
+  // 所以使用 setCustomValue 比直接使用 setValue 好的地方在於,
+  // 它不僅會去更改域的值,同時也會標記狀態的改變,從而達到自動觸發驗證的效果。
+  // 這樣的話表單在設置值的同時就可以立即得到驗證結果,
+  // 而不需要再手動調用驗證函數。這樣讓表單交互體驗更好
   const onBack = () => {
     setStep((value) => value - 1);
   };
@@ -263,8 +274,10 @@ const RentModal = () => {
       isOpen={rentModal.isOpen}
       title="在Airbnb上發布房源 "
       actionLabel={actionLabel}
+      //顯示下一步或建立
       onSubmit={handleSubmit(onSubmit)}
       secondaryActionLabel={secondaryActionLabel}
+      //是否顯示返回鍵
       secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
       onClose={rentModal.onClose}
       body={bodyContent}
@@ -273,3 +286,4 @@ const RentModal = () => {
 };
 
 export default RentModal;
+//房東要出租房子

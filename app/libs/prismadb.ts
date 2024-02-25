@@ -13,4 +13,14 @@ const client = globalThis.prisma || new PrismaClient();
 if (process.env.NODE_ENV !== "production") globalThis.prisma = client;
 // 導出 client 實例
 export default client;
+// 其它檔案import prisma from "@/app/libs/prismadb"
+// 这里的prisma就会得到默认导出的client实例。
+//而默认导出可以用任意名字导入,不一定要和源文件中的变量名相同。
+// 之所以不使用client而是使用prisma,可能有以下几个考虑:
+
+// 将客户端实例命名为prisma是一种通用的约定,便于识别这是一个Prisma客户端。
+// Prisma自己的文档和示例代码也常用prisma作为客户端实例的名字。
+// 使用prisma而不是client可以避免与其他可能的client变量产生混淆。
+// prisma这个名字更能表达这是一个Prisma数据库客户端的单例。
 //1:53:11
+//防正開發模式下,熱重載會一直產生新的PrismaClient的實例
