@@ -52,7 +52,7 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
         // 需要重新獲取最新的收藏列表數據。因此,需要刷新頁面以重新獲取這些受影響的數據。
         toast.success("Success");
       } catch (error) {
-        toast.error("Something went wrong.");
+        toast.error("出了點問題");
       }
     },
     [currentUser, hasFavorited, listingId, loginModal, router]

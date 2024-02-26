@@ -4,6 +4,8 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import dynamic from "next/dynamic";
+//對於某些不需要首屏就加載的大組件,我們可以通過 dynamic 動態引入,實現按需加載。
+//代碼會在用戶訪問頁面時才下載。可以用於優化首屏加載速度。
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 
@@ -68,6 +70,7 @@ const RentModal = () => {
       }),
     [location]
   );
+  //4:03:20
   // import("../Map") 使用動態import語法,會返回一個 Promise。
   //這樣可以避免 Map 組件一載入頁面就被加載,延遲加載該組件。
   // useMemo 的依賴項設置為 [location],代表只有 location 改變時,
@@ -113,7 +116,7 @@ const RentModal = () => {
         rentModal.onClose();
       })
       .catch(() => {
-        toast.error("Something went wrong.");
+        toast.error("出了點問題");
       })
       .finally(() => {
         setIsLoading(false);
