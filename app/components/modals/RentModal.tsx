@@ -128,7 +128,7 @@ const RentModal = () => {
       return "Create";
     }
 
-    return "Next";
+    return "下一步";
   }, [step]);
 
   const secondaryActionLabel = useMemo(() => {
@@ -136,7 +136,7 @@ const RentModal = () => {
       return undefined;
     }
 
-    return "Back";
+    return "返回";
   }, [step]);
 
   let bodyContent = (
