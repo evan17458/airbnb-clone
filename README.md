@@ -10,8 +10,8 @@ Features:
 - Tailwind 動畫和效果
 - 完全響應式
 - 憑據驗證
-- <font color=Blue>Google</font> 驗證
-- <font color=Blue>GitHub</font> 驗證
+- **<span style="color: blue;">Google</span>** 驗證
+- **<span style="color: blue;">GitHub</span>** 驗證
 - 使用 Cloudinary CDN 上傳圖片
 - 使用 react-hook-form 進行客戶端表單驗證和處理
 - 使用 react-toast 處理服務器錯誤
