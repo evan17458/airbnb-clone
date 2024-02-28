@@ -17,7 +17,7 @@ export async function POST(request: Request, { params }: { params: IParams }) {
   const { listingId } = params;
 
   if (!listingId || typeof listingId !== "string") {
-    throw new Error("Invalid ID");
+    throw new Error("無效ID");
   }
 
   let favoriteIds = [...(currentUser.favoriteIds || [])];
@@ -67,4 +67,4 @@ export async function DELETE(
 
   return NextResponse.json(user);
 }
-//
+//5:24:15

@@ -29,7 +29,7 @@ interface ListingClientProps {
   };
   currentUser?: SafeUser | null;
 }
-
+//6:53:46
 const ListingClient: React.FC<ListingClientProps> = ({
   listing,
   reservations = [],
@@ -75,7 +75,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
         listingId: listing?.id,
       })
       .then(() => {
-        toast.success("Listing reserved!");
+        toast.success("你的房間已完成預訂");
         setDateRange(initialDateRange);
         router.push("/trips");
       })
@@ -86,7 +86,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
         setIsLoading(false);
       });
   }, [totalPrice, dateRange, listing?.id, router, currentUser, loginModal]);
-
+  //6:46:18 api檔案在app/api/reservations/route
   useEffect(() => {
     if (dateRange.startDate && dateRange.endDate) {
       const dayCount = differenceInDays(dateRange.endDate, dateRange.startDate);

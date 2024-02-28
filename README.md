@@ -9,7 +9,7 @@ Features:
 - Tailwind 設計
 - Tailwind 動畫和效果
 - 完全響應式
-- 憑據驗證
+- 標準的 Username 和 Password 驗證
 - **<span style="color: blue;">Google</span>** 驗證
 - **<span style="color: blue;">GitHub</span>** 驗證
 - 使用 Cloudinary CDN 上傳圖片
@@ -20,7 +20,7 @@ Features:
 - 頁面空狀態
 - 預訂/預約系統
 - 訪客預約取消
-- 業主預約取消
+- 房東預約取消
 - 創建和刪除房產
 - 定價計算
 - 按類別、日期範圍、地圖位置、客人數、房間和浴室數進行高級搜索算法

@@ -5,7 +5,8 @@ interface IParams {
   userId?: string;
   authorId?: string;
 }
-
+//設6:47:44
+//上面參數設為可選,因為可以分別給mytrip及myreservation及listing頁面用
 export default async function getReservations(params: IParams) {
   //有關放在actions的檔案,都是取資料庫的資料給page用
   try {
@@ -16,14 +17,17 @@ export default async function getReservations(params: IParams) {
     if (listingId) {
       query.listingId = listingId;
     }
-
+    //給listing頁面使用
     if (userId) {
       query.userId = userId;
     }
-
+    //給mytrip頁面使用
     if (authorId) {
       query.listing = { userId: authorId };
     }
+    //給myReservation頁面使用
+    //6:49:05
+
     //  這樣的設計是基於預期的查詢邏輯:
     // 根據房源ID查詢 -> 條件為 listingId
     // 根據預定者ID查詢 -> 條件為 userId
@@ -65,3 +69,4 @@ export default async function getReservations(params: IParams) {
     throw new Error(error);
   }
 }
+//6:47:03
